@@ -1,0 +1,7 @@
+# AI Reflection
+
+* **Tools used:** I used Gemini to act as a thought partner and reviewer for this lab, specifically to help me navigate the `<iomanip>` formatting requirements and to check my manual math calculations for the test tables.
+* **One decision:** I had to decide how to implement the massive mathematical formula for the monthly loan payment. I initially thought about putting the entire equation onto one line, but it became a giant, unreadable block of text. I decided to break the formula down by storing the `pow(1.0 + monthly\_rate, number\_of\_payments)` calculation inside an intermediate double variable called `math\_power`. This allowed me to just write `(monthly\_rate \* math\_power) / (math\_power - 1.0)` for the final calculation, which exactly matched the visual structure of the prompt.
+* **Verification:** I verified my `loan\_payment.cpp` program by running it with the prompt's assigned values (10000, 12, 36). When my console printed a monthly payment of $332.14 and an interest total of $1,957.15, it matched the prompt's expected output, establishing that my implementation of the complex `pow` formula was mathematically sound.
+* **Learning:** I can now comfortably format monetary output streams using `<iomanip>` features like `fixed` and `setprecision()`. One thing I still need to practice is memorizing the exact order of operations C++ uses when dealing with complex fractions and parentheses inside algebra. It can get messy fast.
+
